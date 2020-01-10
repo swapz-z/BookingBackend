@@ -47,6 +47,7 @@ public class CategoryRestController {
     @PutMapping("/changeCategory/{id}")
     public void changeCategory(@RequestBody Category reqCategory, @PathVariable long id){
         catagoryService.changeCategory(reqCategory,id);
+	
     }
 
 
