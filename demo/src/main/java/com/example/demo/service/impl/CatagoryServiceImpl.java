@@ -1,9 +1,9 @@
-package com.example.demo.restcontroller.service.impl;
+package com.example.demo.service.impl;
 
 import com.example.demo.bo.Category;
 import com.example.demo.dao.CategoryDao;
 import com.example.demo.entity.Catagory;
-import com.example.demo.restcontroller.service.CatagoryService;
+import com.example.demo.service.CatagoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +47,7 @@ public class CatagoryServiceImpl  implements CatagoryService {
     @Override public void addCategory(Category category) {
         categoryDao.save(toEntity(category));
     }
-
+//TODO
     @Override public void changeCategory(Category category,long id) {
         Optional<Catagory> foundCategory = categoryDao.findById(id);
         Catagory daoCategory = new Catagory();

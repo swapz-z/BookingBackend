@@ -1,4 +1,4 @@
-package com.example.demo.restcontroller.service;
+package com.example.demo.service;
 
 import com.example.demo.bo.Category;
 import com.example.demo.entity.Catagory;
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface CatagoryService {
     List<Category> getAllCategories();
-
+//TODO
     Optional<Catagory> findById(long id);
 
     void deleteCategoryById(long id);

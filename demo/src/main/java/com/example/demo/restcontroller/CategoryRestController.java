@@ -2,7 +2,7 @@ package com.example.demo.restcontroller;
 
 import com.example.demo.bo.Category;
 import com.example.demo.entity.Catagory;
-import com.example.demo.restcontroller.service.CatagoryService;
+import com.example.demo.service.CatagoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
