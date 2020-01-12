@@ -1,13 +1,13 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "hotel_info")
 public class HotelLocationEntity {
 
     @Id
-    @GeneratedValue
     @Column(name = "hotel_id")
     public int hotelId;
 
@@ -29,7 +29,33 @@ public class HotelLocationEntity {
     @Column(name = "province")
     public String province;
 
+    @OneToOne
+    @JoinColumn(name = "gps_id")
+    public GeolocationEntity geolocationEntity;
+
+    public GeolocationEntity getGeolocationEntity() {
+        return geolocationEntity;
+    }
+
+    public void setGeolocationEntity(GeolocationEntity geolocationEntity) {
+        this.geolocationEntity = geolocationEntity;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "hotel_category",
+            joinColumns = @JoinColumn(name = "hotelloca_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    public List<Catagory> catagories;
+
     public HotelLocationEntity() {
+    }
+
+    public List<Catagory> getCatagories() {
+        return catagories;
+    }
+
+    public void addCatagories(Catagory catagory) {
+        this.catagories.add(catagory);
     }
 
     public int getHotelId() {

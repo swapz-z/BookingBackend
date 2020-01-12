@@ -3,8 +3,8 @@ package com.example.demo.bo;
 public class Category {
 
     private Long cId;
-    private  String cname;
-    private  String cdescription;
+    private String cname;
+    private String cdescription;
 
     public Category() {
     }

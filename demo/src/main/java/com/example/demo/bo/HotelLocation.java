@@ -10,6 +10,7 @@ public class HotelLocation {
     public long postalCode;
     public String province;
 
+
     public int getHotelId() {
         return hotelId;
     }

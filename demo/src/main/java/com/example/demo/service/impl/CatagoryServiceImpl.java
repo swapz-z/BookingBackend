@@ -12,16 +12,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CatagoryServiceImpl  implements CatagoryService {
+public class CatagoryServiceImpl implements CatagoryService {
 
     @Autowired
     private CategoryDao categoryDao;
 
-    public List<com.example.demo.bo.Category> getAllCategories(){
-        List< com.example.demo.bo.Category> bocatList = new ArrayList<>();
+    public List<com.example.demo.bo.Category> getAllCategories() {
+        List<com.example.demo.bo.Category> bocatList = new ArrayList<>();
 
         Iterable<Catagory> listCat = categoryDao.findAll();
-        for (Catagory e: listCat) {
+        for (Catagory e : listCat) {
 
             com.example.demo.bo.Category bocat = new com.example.demo.bo.Category();
             bocat.setcId(e.getcId());
@@ -33,25 +33,30 @@ public class CatagoryServiceImpl  implements CatagoryService {
         return bocatList;
     }
 
-    @Override public Optional<Catagory> findById(long id) {
+    @Override
+    public Optional<Catagory> findById(long id) {
         return categoryDao.findById(id);
     }
 
-    @Override public void deleteCategoryById(long id) {
+    @Override
+    public void deleteCategoryById(long id) {
         boolean count = categoryDao.existsById(id);
         if (count) {
             categoryDao.deleteById(id);
         }
     }
 
-    @Override public void addCategory(Category category) {
+    @Override
+    public void addCategory(Category category) {
         categoryDao.save(toEntity(category));
     }
-//TODO
-    @Override public void changeCategory(Category category,long id) {
+
+    //TODO
+    @Override
+    public void changeCategory(Category category, long id) {
         Optional<Catagory> foundCategory = categoryDao.findById(id);
         Catagory daoCategory = new Catagory();
-        if (foundCategory.isPresent()){
+        if (foundCategory.isPresent()) {
             daoCategory.setcId(id);
             daoCategory.setCname(category.getCname());
             daoCategory.setCdescription(category.getCdescription());

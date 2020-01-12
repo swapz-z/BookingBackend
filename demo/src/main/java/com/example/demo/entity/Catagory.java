@@ -1,18 +1,14 @@
 package com.example.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "CATEGORY")
 public class Catagory {
 
     @Id
-    @GeneratedValue
-    @Column(name = "c_id", insertable=true, updatable=true, unique=true, nullable=false)
+    @Column(name = "c_id")
     private Long cId;
 
     @Column(name = "category_name")
@@ -20,6 +16,17 @@ public class Catagory {
 
     @Column(name = "category_desc")
     private String cdescription;
+
+    @ManyToMany(mappedBy = "catagories")
+    private List<HotelLocationEntity> hotelLocationEntityList;
+
+//    public List<HotelLocationEntity> getHotelLocationEntityList() {
+//        return hotelLocationEntityList;
+//    }
+//
+//    public void setHotelLocationEntityList(List<HotelLocationEntity> hotelLocationEntityList) {
+//        this.hotelLocationEntityList = hotelLocationEntityList;
+//    }
 
     public Catagory() {
     }
@@ -48,7 +55,8 @@ public class Catagory {
         this.cdescription = cdescription;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "Catagory{" + "cId=" + cId + ", cname='" + cname + '\'' + ", cdescription='" + cdescription + '\'' + '}';
     }
 }

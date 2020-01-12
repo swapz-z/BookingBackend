@@ -25,29 +25,29 @@ public class CategoryRestController {
 
 
     @GetMapping("/all")
-    public List<com.example.demo.bo.Category> getAllCategories(){
+    public List<com.example.demo.bo.Category> getAllCategories() {
         return catagoryService.getAllCategories();
     }
 
     @GetMapping("/{id}")
-    public Optional<Catagory> findById(@PathVariable(required = true) long id){
-    return catagoryService.findById(id);
+    public Optional<Catagory> findById(@PathVariable(required = true) long id) {
+        return catagoryService.findById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteByid(@PathVariable(required = true) long id){
+    public void deleteByid(@PathVariable(required = true) long id) {
         catagoryService.deleteCategoryById(id);
     }
 
     @PostMapping("/addCategory")
-    public void addCategory(@RequestBody Category reqCategory){
+    public void addCategory(@RequestBody Category reqCategory) {
         catagoryService.addCategory(reqCategory);
     }
 
     @PutMapping("/changeCategory/{id}")
-    public void changeCategory(@RequestBody Category reqCategory, @PathVariable long id){
-        catagoryService.changeCategory(reqCategory,id);
-	
+    public void changeCategory(@RequestBody Category reqCategory, @PathVariable long id) {
+        catagoryService.changeCategory(reqCategory, id);
+
     }
 
 
