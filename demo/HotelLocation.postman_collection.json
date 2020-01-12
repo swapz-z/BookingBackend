@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "baad485d-300e-480a-9363-4d89f18a2cd5",
+		"name": "HotelLocation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get allhotelsinfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hotels/allinfo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotels",
+						"allinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get allhotels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hotels/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotels",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add hotels",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"requestData\" :{\r\n        \"address\": \"N4449 Us Highway 45\",\r\n        \"city\": \"Tigerton\",\r\n        \"country\": \"US\",\r\n        \"hotelId\": 35651,\r\n        \"name\": \"Rock A Bye Inn\",\r\n        \"postalCode\":54486 ,\r\n        \"province\": \"Morris\",\r\n        \"catagories\": [\r\n            {\r\n                \"cId\": 2,\r\n                \"cname\": \"Bed & Breakfast & Inns\",\r\n                \"cdescription\": \"Bed & Breakfast & Inns it is\"\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/hotels/addHotelInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotels",
+						"addHotelInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category/addCategory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t \"cId\":2,\r\n\t\"cname\": \"Breakfast\",\r\n    \"cdescription\":\"Breakfast it is\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/category/addCategory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"addCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/category/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
